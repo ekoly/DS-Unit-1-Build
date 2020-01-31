@@ -1,54 +1,85 @@
-[Link to the app](https://ufcpredict.stromsy.com/predict)
+This is my Unit 1 project for Lambda School. The goal of this project was to identify interesting trends in MMA by exploring publicly available UFC data.
 
-### Which Fighter Would Win?
+## Research Question
+For each of a few countries with high UFC participation, plot the proportion of wins to total number of fights by year. "Wins" are further broken down into Decisions, TKOs, and Submissions.
 
-In the UFC, the Vegas Odds for a given fight show who is the favorite and who is the underdog. Those who have insights on the fighters stand to make a lot of money on bets.
+## Which countries have high UFC participation?
 
-Besides for the bets, it's inherently interesting for MMA enthusiasts to think about which fighter would win a given fight.
+The first part of our question requires us to find countries of interest i.e. countries with high UFC participation. There are potentially several metrics we could use:
 
-The purpose of this project was to use data analysis to determine who would win. Note that we allow for fighters from different eras and different weight classes to be compared. Long-retired fighters are imagined to be in their primes, and any two fighters being compared are imagined to be fighting at the same weight.
+1. Countries in which the greatest total number of UFC fighters were born
+2. Countries in which the greatest per capita number of UFC fighters were born
+3. Countries which are hosting the greatest total number of fighters
+4. Countries which are hosting the greatest per capita number of fighters
+
+Options one and two were eliminated because data was unavailable. Option three is skewed in favor of high population countries. Four was the best option.
+
+The following plots were made using Sherdog's UFC datasets (linked at the bottom of the page).
+
+<iframe id="igraph-num-fighters" scrolling="no" width="100%" height="500px" src="https://stromsy.nfshost.com/content/per-capita-ufc-fighters.html"></iframe>
+
+We see that the highest per capita participation is in the U.S., Brazil, and Canada. Iceland and Ireland (low population countries) also have a high per capita participation. It is difficult to see the difference between medium-to-low participation countries. For this reason, we will make another graph with high-participation countries omitted.
+
+<iframe id="igraph-num-fighters" scrolling="no" width="100%" height="500px" src="https://stromsy.nfshost.com/content/low-density-per-capita-ufc-fighters.html"></iframe>
+
+There are medium levels of participation in England, Sweden, Russia, Australia, and Poland. Our final list of countries will be the U.S., Brazil, Canada, Russia, Poland, and Japan.
+
+## Which outcomes are common among fighters from each country?
+
+Here are the percentages of fights won by **decision** (split or unanimous), **submission**, or **knockout** (KO or TKO). The **total wins** are also displayed. Losses and disqualifications are not shown. The percentages are out of the total number of fights fought by athletes from the given country.
+
+#### Brazil
+
+Early on the chart we see 100% of fights were won by submission (Joyce Gracie). The ratios even out as time goes on. Interestingly in 2018 we see more wins by TKOs than Decisions for the first time since 2008. Notable Brazilian athletes that achieved TKOs in 2018 include Amanda Nunes.
+
+<iframe id="igraph-num-fighters" scrolling="no" width="100%" height="500px" src="https://stromsy.nfshost.com/content/ufc-fight-outcomes-Brazil.html"></iframe>
+
+#### USA
+
+American fighters lost the majority of their early fights, with most wins coming from submission (Ken Shamrock). The stats fluctuate significantly through the 2000s. Since 2009, the numbers have been fairly constant, with most fights won by decision, then TKO, and lastly submission.
+
+<iframe id="igraph-num-fighters" scrolling="no" width="100%" height="500px" src="https://stromsy.nfshost.com/content/ufc-fight-outcomes-United States.html"></iframe>
+
+#### Japan
+
+Japan won 1 fight by submission in 1997 (Kazushi Sakuraba). Japan's participation in the UFC has been low which causes the numbers to fluctuate.
+
+<iframe id="igraph-num-fighters" scrolling="no" width="100%" height="500px" src="https://stromsy.nfshost.com/content/ufc-fight-outcomes-Japan.html"></iframe>
+
+#### Russia
+
+Russia has become more prevalent in recent years, winning a large majority of their fights in 2017 and 2018. In 2018 Russia won more fights by submission than by TKO (Khabib Nurmagomedov, Islam Makhachev).
+
+<iframe id="igraph-num-fighters" scrolling="no" width="100%" height="500px" src="https://stromsy.nfshost.com/content/ufc-fight-outcomes-Russia.html"></iframe>
+
+#### Canada
+
+Canada had a high percentage of TKOs early on. Since 2009 most wins have been by decision.
+
+<iframe id="igraph-num-fighters" scrolling="no" width="100%" height="500px" src="https://stromsy.nfshost.com/content/ufc-fight-outcomes-Canada.html"></iframe>
+
+#### Poland
+
+Polish athletes achieved many TKOs from 2005 to 2013. Since 2014 most wins were by decision.
+
+<iframe id="igraph-num-fighters" scrolling="no" width="100%" height="500px" src="https://stromsy.nfshost.com/content/ufc-fight-outcomes-Poland.html"></iframe>
+
+#### All Countries
+
+This plot shows the UFC as a whole. In the 1990s, Submissions were most common. In the 2000s, KOs/TKOs were frequent. Since 2009 most wins have been by decision.
+
+<iframe id="igraph-num-fighters" scrolling="no" width="100%" height="500px" src="https://stromsy.nfshost.com/content/ufc-fight-outcomes-total.html"></iframe>
 
 
-### Insights
-For full methodology, consult [this notebook](https://github.com/ekoly/ufc-fight-prediction/blob/master/ipynb/ufc-predictions.ipynb).
+## Conclusions
 
-Each fight was divided into two rows- one focusing on the red fighter and another focusing on the blue fighter. The target was a column called "is_winner", which is True if the fighter won or False if the fighter lost or if the fight ended in a tie. The baseline accuracy by choosing the majority class ("lose or tie") every time was 50.81%.
+Some of the trends are clearly due to rule changes in the UFC. For example early fights had no time limit so there were no wins by decision. In the past decade by far most UFC fights ended in decision.
 
-We proceeded to test a Logistic Regression, a Random Forest Classifier, and an XGBClassifier to try to predict the outcome of UFC fights. The accuracy of the Logistic Regression was originally 64.81%. Interestingly it did not converge, even with the number of iterations jacked up to 333. The accuracy of the Random Forest Classifier was originally 64.97%, which was very similar to the Logistic Regression. The accuracy of the XGBClassifier with it's parameters optimized with a RandomizedSearchCV was originally 65.75%, about a percentage point higher than the others.
+#### Which country is dominant?
 
-The models were further optimized with Permutation Importance. This increased the efficiency of the models by reducing the size of the inputs, but it made no significant difference in accuracy.
+Brazil has always had a high percentage of wins, but in recent years Russian athletes have been the most dominant.
 
-While the XGB Classifier yielded the highest accuracy, its reported confidence was in the high 90s for many predictions. This level of confidence is highly dubious for a UFC fight prediction. We decided to use the Random Forest Classifier for the app, because of its more realistic confidence.
-
-Oddly, the model often outputs different results depending on which fighter is on the left and which is on the right. This was mitigated by making two predictions for each fight, one in each fighter configuration, and going with whichever prediction has the higher confidence level.
-
-
-### Positive Features
-
-This graphic shows features that were highly predictive of the winner.
-The green bars are the best estimate of predictiveness and the thin bars
-are the margin of error.
-                
-Here are some notes to help you interpret it:
-* Features **not** ending in "\_opponent" are features of the red fighter. 
-* Features that **do** end in "\_opponent" are features of the blue fighter.
-* Features ending in "\_ratio" are the feature of the red fighter over the feature of the blue fighter.
-* Features containing "\_opp\_" represent the average of that action that the fighter **receives** during fights.
-* "att" usually means attempts
-* "td" usually means takedowns
-
-![positive features](https://github.com/ekoly/ufc-fight-prediction/blob/master/img/positive-features.png?raw=true)
-
-### Negative Features
-
-This graphic shows features that caused predictions to become worse when included in the analysis.
-
-![negative features](https://github.com/ekoly/ufc-fight-prediction/blob/master/img/negative-features.png?raw=true)
-
-### Isolated Partial Dependance Plots
-
-The following plots show the likelyhood of a win based on individual features. Higher y-values represent higher likelyhood of winning the fight.
-
-![age ratio](https://github.com/ekoly/ufc-fight-prediction/blob/master/img/age-ratio.png?raw=true)
-![reach ratio](https://github.com/ekoly/ufc-fight-prediction/blob/master/img/reach-ratio.png?raw=true)
-![current win streak](https://github.com/ekoly/ufc-fight-prediction/blob/master/img/current-win-streak.png?raw=true)
+## Resources
+* [Notebook](https://github.com/ekoly/DS-Unit-1-Build/blob/master/ipynb/explore_data.ipynb)
+* [Fight Data from Kaggle](https://www.kaggle.com/rajeevw/ufcdata)
+* [Fighter Data from Sherdog](https://docs.google.com/spreadsheets/d/1z3QX0uWXv-XHX2Nfuj6zZHrfEeXI3A9CKWkrGaBzB8s/edit#gid=0)
