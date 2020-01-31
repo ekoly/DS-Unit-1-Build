@@ -1,3 +1,5 @@
+To see the same write-up but with interactive visuals, see the blog post [here](https://datascience.stromsy.com/2019-11-17-Finish-Types-in-the-UFC/).
+
 This is my Unit 1 project for Lambda School. The goal of this project was to identify interesting trends in MMA by exploring publicly available UFC data.
 
 ## Research Question
