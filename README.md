@@ -1,166 +1,54 @@
-# DS Data Storytelling Portfolio Project
+[Link to the app](https://ufcpredict.stromsy.com/predict)
 
-Contents
-- [Rubric](#rubric)
-- [Deliverables](#deliverables)
-- [Milestones](#milestones)
-- [Examples](#examples)
+### Which Fighter Would Win?
 
-## Rubric
+In the UFC, the Vegas Odds for a given fight show who is the favorite and who is the underdog. Those who have insights on the fighters stand to make a lot of money on bets.
 
-| **Objective**      | **1**                                                                                                                                       | **2**                                                                                                                                                                                                                                                                                      | **3**                                                                                                                                                                                                                                                                   |
-|--------------------|---------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Research Question  | Student does not have a coherent research question. The question is either incomplete, non-existent or is poorly communicated.              | Student research question is concise, direct, and practical. Student can communicate their main findings in 1-2 sentences. Student potentially had to alter their course on the projects based on the problem and the data, these learnings are documented and articulated by the project. | Student powerfully communicated a compelling research question and student's data insights are particularly valuable and well-communicated.                                                                                                                             |
-| Source Dataset     | Student did not source an appropriate or usable dataset. Student did not avoid datasets that are overused in student data science projects. | Student sourced a useful dataset that was not too complex to work with and that had enough usable features so as to provide insights relating to the research question. Data set was cleaned appropriately for the project.                                                                | Student went above and beyond to source data. Student may have successfully: cleaned particularly dirty data, scraped a dataset from a website, merged multiple datasets or generated particularly creative new features on a dataset that allowed for unique insights. |
-| Notebook           | Student notebook is incomplete, messy, does not run from top to bottom.                                                                     | Student has a notebook that documents their data cleaning, exploration, and visualizations. Notebook runs successfully from top to bottom.                                                                                                                                                 | Student notebook is very clean and readable. Notebook runs from top to bottom and contains appropriate markdown and code comments.                                                                                                                                      |
-| Two Visualizations | Student does not create at least two basic visualizations.                                                                                  | Student creates two explanatory visualizations that communicate insights from their dataset.                                                                                                                                                                                               | Student's visualizations are particularly polished and consumable. Viewers will correctly interpret the main data insight in seconds without reading supporting text.                                                                                                   |
-| Blog Post          | Student does not write or publish a data storytelling blog post                                                                             | Student writes and publishes a data storytelling blog post that includes two visualizations and effectively communicates data insights. Blog post should be written for a non-technical audience.                                                                                          | Student blog post is particularly well written, compelling, and consumable by non-technical readers.                                                                                                                                                                    |
-| Portfolio          | Student does not link to blog post from portfolio.                                                                                          | Student links to their blog post from their portfolio site.                                                                                                                                                                                                                                | Student links to their blog post from their portfolio site and also works to share their post on social media.                                                                                                                                                          |
-| Presentation       | Student does not present or provide a recording of a presentation.                                                                          | Student gives a two minute presentation or records a two-minute presentation to their peers.                                                                                                                                                                                               | Student's two-minute presentation is well rehearsed, easy to understand and communicates main ideas within the two minute time limit.                                                                                                                                   |
+Besides for the bets, it's inherently interesting for MMA enthusiasts to think about which fighter would win a given fight.
 
-**Please Note:** There is no "Sprint Challenge" associated with this Build Sprint. In order to pass the Build Sprint, you need to get a score of 2 or higher on **every** section of the rubric above. A score of 1 on any of the objectives will result in a 1 for the entire Sprint.
-
-## Deliverables
-
-### 1. Research Question
-
-Be able to communicate your research question in 1 or 2 sentences: 280 characters or less. Your research question is extremely important and you should have one in mind before you set out. This does not mean that your research question can't change or be adapted over time. As you search for available datasets or explore your data you may learn that your question can't be answered with your dataset. That's OK! This is part of the process. Feel free to revise your research question, but at all times you need to know what you're driving at and what you're trying to communicate with your visualizations. You will need to state your research question at the beginning of your two-minute presentation at the end of the sprint.
-
-### 2. Code
-Required
-- Create Python notebook(s) to wrangle, analyze, and visualize your data.
-- Push your notebook(s) to your GitHub.
-- Final notebook should be clean and organized
-- Notebook should run from top to bottom without errors by the end of the sprint.
-
-Recommended
-- Keep it simple. Don’t use machine learning. (You’ll do this in future projects!)
-- Use helpful inline code comments and markdown where applicable. Your notebook is not your main deliverable, but on ocassion hiring managers may want to see your code after looking at one of your portfolio projects so it's good for it to be presentable.
-
-### 3. Blog post
-
-Required
-- Choose your own topic and data.
-- Write a blog post with at least two data visualizations, to communicate insights on your topic.
-- Publish your post on Medium, your portfolio site or some other publicly accessible webpage.
-- Don’t use data from Kaggle competitions or popular “toy” datasets.
-
-Recommended
-- Don't write a ["wall of text."](https://www.theonion.com/nation-shudders-at-large-block-of-uninterrupted-text-1819571366) Format your post to be [skimmable](https://www.nngroup.com/articles/how-users-read-on-the-web/). Edit it to be [readable](http://www.hemingwayapp.com/).
-- Describe both your insights and your process, but focus more on the insights. Don’t include much code, if any, in your blog post.
-- Remember that you're writing for a non-technical audience that doesn't have training in data science. Imagine that you're writing for an executive or boss at a company who doesn't have code/statistics training. Make the data insights as compelling and consumable as possible.
-- Share your blog post with TLs, instructors, or fellow students to get feedback on it before you publish. Check out the #ds_writers and #medium channels on Slack.
-
-### 4. Portfolio
-Required
-- Add your short summary to your portfolio site.
-- Link from your portfolio site to your blog post and code.
-
-Recommended
-- Host your site with GitHub Pages.
-- Include your name, bio, and contact info on your site.
-- Add Google Analytics to your portfolio site and then share your post on social media and watch the pageviews roll in. 
-
-### 5. Two minute presentation
-Required
-- Give a two minute presentation on Zoom for your cohort.
-- State your research question at the beginning of 
-
-Recommended
-- Practice beforehand, out loud and timed. Two minutes will go by so much faster than you think it will. The more you rehearse the more awesome and polished your presentation will be. 
-- There will not be sufficient time to go over any code, you'll barely have time to go over the main takeaways from your visualizations in two minutes -trust me. 
-- If you end up including more than two visualizations in your project pick your favorites to talk about as you might not have time to talk about all of them.
+The purpose of this project was to use data analysis to determine who would win. Note that we allow for fighters from different eras and different weight classes to be compared. Long-retired fighters are imagined to be in their primes, and any two fighters being compared are imagined to be fighting at the same weight.
 
 
-## Milestones
+### Insights
+For full methodology, consult [this notebook](https://github.com/ekoly/ufc-fight-prediction/blob/master/ipynb/ufc-predictions.ipynb).
 
-_These milestones are suggested to help you have confidence that you're on track for a great project!_
+Each fight was divided into two rows- one focusing on the red fighter and another focusing on the blue fighter. The target was a column called "is_winner", which is True if the fighter won or False if the fighter lost or if the fight ended in a tie. The baseline accuracy by choosing the majority class ("lose or tie") every time was 50.81%.
 
-End of Sprint 2
-- Look at examples of past projects.
-- Start your GitHub Pages portfolio site.
+We proceeded to test a Logistic Regression, a Random Forest Classifier, and an XGBClassifier to try to predict the outcome of UFC fights. The accuracy of the Logistic Regression was originally 64.81%. Interestingly it did not converge, even with the number of iterations jacked up to 333. The accuracy of the Random Forest Classifier was originally 64.97%, which was very similar to the Logistic Regression. The accuracy of the XGBClassifier with it's parameters optimized with a RandomizedSearchCV was originally 65.75%, about a percentage point higher than the others.
 
-End of Sprint 3
-- Finalize your topic and dataset.
-- Write the first draft of your research question.
+The models were further optimized with Permutation Importance. This increased the efficiency of the models by reducing the size of the inputs, but it made no significant difference in accuracy.
 
-Module 1, Sprint 4 (Build Sprint)
-- Begin to analyze and visualize your data. Try and have all data cleaning and reshaping wrapped up by the end of the first day so as to allow you ample time to create super awesome visualizations.
+While the XGB Classifier yielded the highest accuracy, its reported confidence was in the high 90s for many predictions. This level of confidence is highly dubious for a UFC fight prediction. We decided to use the Random Forest Classifier for the app, because of its more realistic confidence.
 
-Module 2, Sprint 4 - end of day
-- Create your first polished explanatory visualization.
-
-Module 3, Sprint 4 - end of day
-- Create your second polished explanatory visualization.
-
-Module 4, Sprint 4 — end of day
-- Complete your code and blog post.
-- Share your draft with classmates for feedback.
-
-Last day of Sprint 4 - before you give your 2 minute presentation
-- Practice your 2 minute presentation.
-- Publish your blog post on Medium or GitHub Pages.
-- Push your code to GitHub.
-- Add a short summary and link to your portfolio project to your portfolio site.
-- Link from your portfolio to your blog post and code.
-
-During Class - Last day of Sprint 4 (Build Week)
-- Give your 2 minute presentation for your cohort.
-
-## Examples
-
-### [Projects — Lambda DS1!](https://drive.google.com/file/d/1RJoAqDgawzSHOJPlDQRRlfz-EnIsskpL/view?usp=sharing)
-
-### Projects — Others
-- [How Americans rank their cities' tacos and transit](https://cdn.theatlantic.com/assets/media/img/posts/2018/12/tacos_vs_transit_major_cities/44577a9f0.png). (You can do something this simple!)
-- [Mountains and Money in Colorado’s Ageless Alps: A Visual Exploration of Longevity in the Mountains](https://twitter.com/mulletmapping/status/1080847004270583809). (Or this complex!)
-- ***[Training Kit](https://learn.lambdaschool.com/ds/module/recedjanlbpqxic2r) has many more examples, and a process to help you find ideas.***
-
-### Portfolio sites — Lambda DS
-- [Brian Behnke](https://brianbehnke.github.io/)
-- [Daniel Martin-Alarcon](https://danielmartinalarcon.github.io/)
-- [Ed Chin](https://ed-chin-git.github.io/)
-- [Ray Heberer](http://www.rayheberer.ai/)
-- [Samir Gadkari](https://samirgadkari.github.io/)
-
-### Portfolio sites — Others
-- [Max Woolf](https://minimaxir.com/): GitHub Pages, Jekyll. Image + short description per project. You don’t need so many projects. He moved from QA Engineer to Data Scientist, without going back to school.
-- [Sara Simon](https://smbsimon.github.io/): GitHub Pages. Former bootcamp student. Just one page, one photo, two paragraphs, six links. Less is more!
-
-## Select Projects from DS2
-
-- [Dmitriy Kavyazin, Analyzing Prescription Rates in Medicaid Drug Utilization Data](https://medium.com/@dmitriy.kavyazin/what-drugs-are-people-on-56ce31b40a4f)
-
-- [Trista Paul, Movie Night Coming Up? An Analysis of What Goes Into Bad IMDb Ratings](https://medium.com/@tristap98/movie-night-coming-up-an-analysis-of-what-goes-into-bad-imdb-ratings-7f290cac2e7f)
-
-- [Mac Scheffer, Play Calling in the NFL: The Road to Improvement](https://blog.usejournal.com/play-calling-in-the-nfl-the-road-to-improvement-fabeb4da7eb8)
-
-- [Daniel Carter, Is ‘Buy and Hold’ a Good Investment Strategy?](https://medium.com/@daniel_carter/is-buy-and-hold-a-good-investment-strategy-fe2d43266bb5)
-
-- [Chris Luedtke, The Ultimate Day of Chicago Bikeshare](https://chrisluedtke.github.io/divvy-data.html)
-
-## Select Projects from DS3
-
-- [Michael Brady, Peak Kickstarter? What 182K Kickstarter Campaigns Tell Us](https://medium.com/@mikebrady44/peak-kickstarter-35dc7f242a2a)
-
-- [Connor Heraty, An Armistice in Chicago’s Drug War](https://medium.com/@connorpheraty/an-armistice-in-chicagos-drug-war-4245bcd9d66f)
-
-- [Lily Su, Motor Vehicle Injuries and Deaths from November 2018 — April 2019](https://medium.com/@lilysu/motor-vehicle-injuries-and-deaths-from-nov-1-2018-apr-8-2019-a3a50b5e063c)
-
-- [Alexander Witt, The Urban Sanitation Windfall](https://alex-witt.github.io/2019-04-19-dc_parking/)
-
-- [Dustin Yang, LA Parking — Worth the risk?](https://medium.com/@yangdustin5/la-parking-worth-the-risk-207d167c313)
-
-- [Liv Johnson, Untapped Potential: Making the U.S. An Energy Leader](https://blog.usejournal.com/untapped-potential-making-the-u-s-an-energy-leader-378b387263fa)
+Oddly, the model often outputs different results depending on which fighter is on the left and which is on the right. This was mitigated by making two predictions for each fight, one in each fighter configuration, and going with whichever prediction has the higher confidence level.
 
 
-- [Patricia Bradshaw, Dear Technology, It’s Not You… It’s Me](https://blog.usejournal.com/dear-technology-its-not-you-it-s-me-8d27ff3fc3c5?sk=57ef664c141253f770e4a2833c5eabff)
+### Positive Features
 
-- [Micheal Bundick, The Secrets of Catan:](https://medium.com/@bundickm/the-secrets-of-catan-ed203a9a7c61)
+This graphic shows features that were highly predictive of the winner.
+The green bars are the best estimate of predictiveness and the thin bars
+are the margin of error.
+                
+Here are some notes to help you interpret it:
+* Features **not** ending in "\_opponent" are features of the red fighter. 
+* Features that **do** end in "\_opponent" are features of the blue fighter.
+* Features ending in "\_ratio" are the feature of the red fighter over the feature of the blue fighter.
+* Features containing "\_opp\_" represent the average of that action that the fighter **receives** during fights.
+* "att" usually means attempts
+* "td" usually means takedowns
 
----
+![positive features](https://github.com/ekoly/ufc-fight-prediction/blob/master/img/positive-features.png?raw=true)
 
-# Add a link to your portfolio:
-This will assist the TLs in gathering up links to everybody's portfolio site. Remember that we should be able to get to your code on github and your blog post from your portfolio site, so this should be the only link that we need in order to access the rest of your project deliverables.
+### Negative Features
 
-[Blog Post](https://datascience.stromsy.com/2019-11-17-Finish-Types-in-the-UFC/)
+This graphic shows features that caused predictions to become worse when included in the analysis.
+
+![negative features](https://github.com/ekoly/ufc-fight-prediction/blob/master/img/negative-features.png?raw=true)
+
+### Isolated Partial Dependance Plots
+
+The following plots show the likelyhood of a win based on individual features. Higher y-values represent higher likelyhood of winning the fight.
+
+![age ratio](https://github.com/ekoly/ufc-fight-prediction/blob/master/img/age-ratio.png?raw=true)
+![reach ratio](https://github.com/ekoly/ufc-fight-prediction/blob/master/img/reach-ratio.png?raw=true)
+![current win streak](https://github.com/ekoly/ufc-fight-prediction/blob/master/img/current-win-streak.png?raw=true)
